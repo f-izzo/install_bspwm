@@ -53,7 +53,7 @@ build_install() {
     for pkg in $packages
     do
         set -x
-        cd $pkg
+        cd ./$pkg
         make
         sudo make install
         cd ..
@@ -63,17 +63,17 @@ build_install() {
 
 configuration() {
     echo ">>> Adding Display Manager configuration"
-    sudo cp bspwm/contrib/freedesktop/bspwm.desktop /usr/share/xsessions/
+    sudo cp ./bspwm/contrib/freedesktop/bspwm.desktop /usr/share/xsessions/
     echo ">>> Copying example configuration"
     mkdir -p ~/.config/bspwm/ ~/.config/sxhkd/
     if ! [ -f ~/.config/bspwm/bspwmrc ]; then
-        cp bspwm/examples/bspwmrc ~/.config/bspwm/bspwmrc
+        cp ./bspwm/examples/bspwmrc ~/.config/bspwm/bspwmrc
     fi
     if ! [ -f ~/.config/sxhkd/sxhkdrc ]; then
-        cp bspwm/examples/sxhkdrc ~/.config/sxhkd/sxhkdrc
+        cp ./bspwm/examples/sxhkdrc ~/.config/sxhkd/sxhkdrc
     fi
     for file in panel panel_bar panel_colors; do
-        cp bspwm/examples/panel/$file ~/.config/bspwm/
+        cp ./bspwm/examples/panel/$file ~/.config/bspwm/
     done
     chmod +x ~/.config/bspwm/panel ~/.config/bspwm/panel_bar
     if ! [ `grep -q panel ~/.config/bspwm/bspwmrc` ] ; then
@@ -93,7 +93,7 @@ configuration() {
 }
 
 main(){
-    mkdir -p build && cd build
+    mkdir -p ./build && cd ./build
     deps
     clone
     build_install
