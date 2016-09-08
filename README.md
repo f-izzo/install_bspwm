@@ -18,6 +18,8 @@ Uninstallation is not yet implemented, you can do the following:
 - Go into `install_bspwm/build`, enter each subfolder and issue `sudo make uninstall`
 - Delete `.config/bspwm` and `.config/sxhkd`
 - Remove the last lines from `~/.bash_profile`
+- Delete `bspwm.desktop` from `/usr/share/xsessions/`
+- You can also remove the dependencies listed in the script
 
 #### Credits
 [Windelicato's bspwm guide](https://github.com/windelicato/dotfiles/wiki/bspwm-for-dummies)
