@@ -68,14 +68,14 @@ configuration() {
     mkdir -p ~/.config/bspwm/ ~/.config/sxhkd/
     if ! [ -f ~/.config/bspwm/bspwmrc ]; then
         cp ./bspwm/examples/bspwmrc ~/.config/bspwm/bspwmrc
+        for file in panel panel_bar panel_colors; do
+            cp ./bspwm/examples/panel/$file ~/.config/bspwm/
+        done
+        chmod +x ~/.config/bspwm/panel ~/.config/bspwm/panel_bar
     fi
     if ! [ -f ~/.config/sxhkd/sxhkdrc ]; then
         cp ./bspwm/examples/sxhkdrc ~/.config/sxhkd/sxhkdrc
     fi
-    for file in panel panel_bar panel_colors; do
-        cp ./bspwm/examples/panel/$file ~/.config/bspwm/
-    done
-    chmod +x ~/.config/bspwm/panel ~/.config/bspwm/panel_bar
     if ! [ `grep -q panel ~/.config/bspwm/bspwmrc` ] ; then
         echo -e "\npanel &" >> ~/.config/bspwm/bspwmrc
     fi
