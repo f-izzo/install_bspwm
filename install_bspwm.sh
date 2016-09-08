@@ -24,15 +24,15 @@ deps() {
     case $OS in
         Fedora)
         set -x
-        sudo dnf install $arch_deps;;
+        sudo dnf install $fedora_deps;;
         
         Ubuntu|Debian)
         set -x
-        sudo apt install $dependencies;;
+        sudo apt install $ubuntu_deps;;
 
         Arch)
         set -x
-        sudo pacman -S $dependencies;;
+        sudo pacman -S $arch_deps;;
     esac
     set +x
 }
