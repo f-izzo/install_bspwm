@@ -6,7 +6,7 @@
 packages="bspwm sxhkd xdo sutils xtitle bar"
 
 fedora_deps="xcb-util-devel xcb-util-keysyms-devel xcb-util-wm-devel alsa-lib-devel dmenu rxvt-unicode terminus-fonts"
-arch_deps="libxcb xcb-util xcb-util-wm"
+arch_deps="libxcb xcb-util xcb-util-keysyms xcb-util-wm"
 ubuntu_deps="xcb libxcb-util0-dev libxcb-ewmh-dev libxcb-randr0-dev libxcb-icccm4-dev libxcb-keysyms1-dev libxcb-xinerama0-dev libasound2-dev libxcb-xtest0-dev"
 
 clone_urls="https://github.com/baskerville/bspwm.git 
